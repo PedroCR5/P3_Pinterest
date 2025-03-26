@@ -1,7 +1,7 @@
 import { windowWidth, numberOfColumns } from "../../../main";
 import { createButton } from "../button/button";
 import "./card.css";
-/* import ColorThief from './node_modules/colorthief/dist/color-thief.mjs' */
+import { pixelImg } from "../../../pixel";
 
 export function createCards(imagesList) {
   const divMainContainer = document.querySelector(".mainContainerCards");
@@ -21,29 +21,6 @@ export function createCards(imagesList) {
     nombresColumnas.push(document.getElementById(`div${j + 1}`))
   }
   console.log(nombresColumnas);
-  /* 
-  const photos = [
-              'photo1.jpg',
-              'photo2.jpg',
-              'photo3.jpg',
-              'photo4.jpg',
-              'photo5.jpg',
-              'photo6.jpg'
-          ];
-  
-          const divs = [
-              document.getElementById('div1'),
-              document.getElementById('div2'),
-              document.getElementById('div3')
-          ];
-  
-          photos.forEach((photo, index) => {
-              const img = document.createElement('img');
-              img.src = photo;
-              divs[index % divs.length].appendChild(img);
-          });
-  
-  */
 
   let numberOfImagesPerColumn = Math.ceil(imagesList.length / numberOfColumns);
   console.log(numberOfImagesPerColumn);
@@ -51,17 +28,6 @@ export function createCards(imagesList) {
   for (let i = 0; i < imagesList.length; i++) {
 
     let imgParaUsar = imagesList[i].urls.thumb;
-    //prueba
-    //const colorThief = new colorThief();
-
-    // Make sure image is finished loading
-    // if (img.complete) {
-    /*     colorThief.getColor(imgParaUsar); */
-
-    //  }
-
-    //fin prueba
-
     let heightImg = imagesList[i].height / 10;
     let widthImg = imagesList[i].width / 10;
     console.log(numberOfColumns);
@@ -112,6 +78,7 @@ export function createCards(imagesList) {
     <img class="imgCamera" src="./assets/camera.png" alt="pinterest">
     <span class="likesHeart">+53</span>
     `
+    pixelImg(imgParaUsar);
   }
 }
 

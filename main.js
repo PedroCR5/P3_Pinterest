@@ -49,34 +49,16 @@ import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/card';
 import { createColumns } from './src/components/cardContainers/cardContainer';
-import ColorThief1 from './node_modules/colorthief/dist/color-thief.mjs';
+//import { pixelImg } from './pixel.js';
+
 export let windowWidth = (window.innerWidth / 2.3);
 export { numberOfColumns };
 
-import ColorThief from './node_modules/colorthief/dist/color-thief.mjs';
-
-/* import ColorThief from './node_modules/colorthief/dist/color-thief.mjs'
-
-const colorThief = new ColorThief();
-const img = document.querySelector('iconePinterest');
-
-if (img.complete) {
-  colorThief.getColor(img);
-} else {
-  image.addEventListener('load', function () {
-    colorThief.getColor(img);
-  });
-} */
+//pixelImg()
 
 let numberOfColumns = Math.ceil(window.innerWidth / 300);
 console.log(numberOfColumns);
 
-/* function createColumns(numberOfColumns) {
-  const divMainContainer = document.querySelector(".mainContainerCards");
-  for (let i = 0; i < numberOfColumns; i++) {
-    divMainContainer.innerHTML = `<div class="mainContainerCards container${i + 1} "></div>`
-  }
-} */
 
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
@@ -109,13 +91,6 @@ async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-
-  /* let numberOfImagesPerColumn = Math.ceil(imagesList.length / numberOfColumns);
-  const listOfColums = [];
-  for (let i = 1; i < numberOfColumns; i++) {
-    listOfColums[`const${i}`]
-  }
-  console.log(listOfColums); */
 
 
   console.log(imagesList);
@@ -163,32 +138,4 @@ let imagesListP = {}
         </div>`
 }
 getImagesPeople('cara') */
-// color
-/* const colorThief = new ColorThief();
-const img = document.querySelector('iconePinterest');
-console.log(img); */
-
-/* if (img.complete) { */
-//colorThief.getColor(img);
-/* } else {
-  image.addEventListener('load', function() {
-    colorThief.getColor(img);
-  }); */
-/* } */
-
-// BETTER 👍
-const colorThief = new ColorThief1();
-const img1 = document.querySelector(`iconePinterest`);
-console.log(img1);
-//if (img1.complete) {
-//colorThief.getColor(img1);
-console.log(colorThief);
-//} else {
-/* img1.addEventListener('load', function () {
-  colorThief.getColor(img1);
-  console.log(colorThief);
-}); */
-//}
-
-console.log(colorThief);
 

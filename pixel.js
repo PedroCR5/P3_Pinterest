@@ -1,29 +1,28 @@
-import './style.css'
-const img = document.getElementById('miImagen')
-const canvas = document.getElementById('miCanvas')
-const ctx = canvas.getContext('2d')
-const allPixels = [];
-img.onload = function () {
-  // Ajustar el tamaño del canvas al tamaño de la imagen
-  canvas.width = img.width
-  canvas.height = img.height
-  // Dibujar la imagen en el canvas
-  ctx.drawImage(img, 0, 0)
-  // Obtener los datos de los píxeles
-  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  const data = imageData.data;
-  // Recorrer cada píxel
-  for (let i = 0; i < data.length; i += 4) {
-    const red = data[i];
-    const green = data[i + 1];
-    const blue = data[i + 2];
-    const alpha = data[i + 3];
-    var colorPixel = `${red}, ${green}, ${blue}`;
-    allPixels.push(colorPixel);
+export function pixelImg(imgPixel) {
+  //const img = document.getElementById('miImagen')
+  const canvas = imgPixel;
+  const ctx = canvas.getContext('2d')
+  const allPixels = [];
+  img.onload = function () {
+    // Ajustar el tamaño del canvas al tamaño de la imagen
+    canvas.width = img.width
+    canvas.height = img.height
+    // Dibujar la imagen en el canvas
+    ctx.drawImage(img, 0, 0)
+    // Obtener los datos de los píxeles
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    // Recorrer cada píxel
+    for (let i = 0; i < data.length; i += 4) {
+      const red = data[i];
+      const green = data[i + 1];
+      const blue = data[i + 2];
+      const alpha = data[i + 3];
+      var colorPixel = `${red}, ${green}, ${blue}`;
+      allPixels.push(colorPixel);
+    }
   }
-}
-img.onload();
-function pixelImg() {
+  img.onload();
   function encontrarValorMasRepetido(arr) {
     const contador = {};
     let maxRepeticiones = 0;
@@ -46,4 +45,3 @@ function pixelImg() {
   let bValueOk = valorOk.slice(10, 13);;
   document.getElementById("myDiv").style.backgroundColor = `rgb(${rValueOk}, ${gValueOk}, ${bValueOk})`;
 }
-pixelImg();
