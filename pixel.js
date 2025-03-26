@@ -37,7 +37,6 @@ function pixelImg() {
     }
     return valorMasRepetido;
   }
-  // Ejemplo de uso:
   const valorOk = encontrarValorMasRepetido(allPixels);
   console.log(valorOk);
   let rValueOk = valorOk.slice(0, 3);
