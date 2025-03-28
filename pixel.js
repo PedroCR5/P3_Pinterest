@@ -1,6 +1,10 @@
 export function pixelImg(imgPixel) {
-  //const img = document.getElementById('miImagen')
-  const canvas = imgPixel;
+  const img = document.getElementById('miImagen')
+  console.log(imgPixel);
+
+  const canvas = img;
+  console.log(canvas);
+
   const ctx = canvas.getContext('2d')
   const allPixels = [];
   img.onload = function () {
@@ -43,5 +47,5 @@ export function pixelImg(imgPixel) {
   let gValueOk = valorOk.slice(5, 8);
   console.log(gValueOk);
   let bValueOk = valorOk.slice(10, 13);;
-  document.getElementById("myDiv").style.backgroundColor = `rgb(${rValueOk}, ${gValueOk}, ${bValueOk})`;
+  document.getElementById("miImagen").style.backgroundColor = `rgb(${rValueOk}, ${gValueOk}, ${bValueOk})`;
 }

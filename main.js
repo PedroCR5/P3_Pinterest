@@ -72,7 +72,7 @@ divApp.innerHTML =
     ${createButton({ texto: "D", size: "s", classInfo: "upRightButton" })}
   </div>
 </header> 
-<div class="pruebas">
+<div class="myDiv">
       
     </div>
 

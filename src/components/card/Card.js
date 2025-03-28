@@ -49,7 +49,8 @@ export function createCards(imagesList) {
         </div>  
        
         <div class="cardBottomPart">
-          <img src="${imgParaUsar}" class="imgPersonRound" />
+        
+          <canvas src="${imgParaUsar}" class="imgPersonRound" id="miImagen" ></canvas>
           <p class="cardPUser${i} name"> </p>
           <img src="./assets/upImage.png" class="upImg" />
           <p class="cardPDate${i} date"> </p>
