@@ -188,7 +188,7 @@
   border: solid;
   border-radius: 50%;
   max-width: 30%;
-  border-color: aquamarine;
+  /*   border-color: aquamarine; */
   border-width: 10px;
   margin-top: -40%;
 }

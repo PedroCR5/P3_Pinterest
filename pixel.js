@@ -1,22 +1,31 @@
-export function pixelImg(imgPixel) {
-  const img = document.getElementById('miImagen')
-  console.log(imgPixel);
+export function pixelImg(imgUsadaCard, iCard) {
+  const img = document.getElementById(`miImagen${iCard}`);
+  let canvas = document.getElementById(`miImagenCanvas${iCard}`);
 
-  const canvas = img;
-  console.log(canvas);
+  //console.log(imgUsadaCard);
 
-  const ctx = canvas.getContext('2d')
+  /* const canvas = img;
+  console.log(canvas); */
+
+  const ctx = canvas.getContext('2d');
+  //console.log(ctx);
+
   const allPixels = [];
+  console.log(allPixels);
+
   img.onload = function () {
     // Ajustar el tamaño del canvas al tamaño de la imagen
     canvas.width = img.width
     canvas.height = img.height
     // Dibujar la imagen en el canvas
-    ctx.drawImage(img, 0, 0)
+    ctx.drawImage(canvas, 1, 0);
     // Obtener los datos de los píxeles
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    console.log(imageData);
+
     const data = imageData.data;
     // Recorrer cada píxel
+    console.log(`Red: ${data[0]}, Green: ${data[1]}, Blue: ${data[2]}, Alpha: ${data[3]}`);
     for (let i = 0; i < data.length; i += 4) {
       const red = data[i];
       const green = data[i + 1];
@@ -24,6 +33,8 @@ export function pixelImg(imgPixel) {
       const alpha = data[i + 3];
       var colorPixel = `${red}, ${green}, ${blue}`;
       allPixels.push(colorPixel);
+      //console.log(allPixels);
+
     }
   }
   img.onload();
@@ -41,11 +52,16 @@ export function pixelImg(imgPixel) {
     return valorMasRepetido;
   }
   const valorOk = encontrarValorMasRepetido(allPixels);
-  console.log(valorOk);
-  let rValueOk = valorOk.slice(0, 3);
-  console.log(rValueOk);
-  let gValueOk = valorOk.slice(5, 8);
-  console.log(gValueOk);
-  let bValueOk = valorOk.slice(10, 13);;
-  document.getElementById("miImagen").style.backgroundColor = `rgb(${rValueOk}, ${gValueOk}, ${bValueOk})`;
+  /*  console.log(valorOk);
+   let rValueOk = valorOk.slice(0, 3);
+   console.log(rValueOk);
+   let gValueOk = valorOk.slice(5, 8);
+   console.log(gValueOk);
+   let bValueOk = valorOk.slice(10, 13);;
+   document.getElementById("miImagen").style.backgroundColor = `rgb(${rValueOk}, ${gValueOk}, ${bValueOk})`; */
+  //const pruebaRGB = "rgb(" + valorOk + ")";
+  const pruebaRGB = "rgb(255,0,0)";
+
+  return pruebaRGB;
+  return valorOk
 }

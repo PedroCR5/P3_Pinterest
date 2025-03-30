@@ -57,7 +57,7 @@ export { numberOfColumns };
 //pixelImg()
 
 let numberOfColumns = Math.ceil(window.innerWidth / 300);
-console.log(numberOfColumns);
+//console.log(numberOfColumns);
 
 
 const divApp = document.querySelector("#app");
@@ -93,7 +93,7 @@ async function getImages(query) {
   imagesList = await jsonResponse.results;
 
 
-  console.log(imagesList);
+  //console.log(imagesList);
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
