@@ -33,6 +33,7 @@
 //? asociar fotos a cards
 //? coger la foto de una persona y nombre
 //? he cogido una imagen de persona y falta que se pinte en el html
+//? Saqué lista de hombres, falta darselo a Card.js para que pinte una en cada Card.
 // mejorar icono visitar
 //Se limpiará el input después de cada búsqueda para que no moleste hacer una nueva búsqueda
 //? Border foto persona color mayoritario de la foto
@@ -78,6 +79,10 @@ divApp.innerHTML =
 
 
 <main> 
+<div class="pruebaPerson">
+    <img class="pruebaImgPerson" src="./assets/pinterest_logo.png" alt="pinterest">
+
+</div> 
 <div class="mainContainerCards">
 </div> </main>`;
 
@@ -138,4 +143,23 @@ let imagesListP = {}
         </div>`
 }
 getImagesPeople('cara') */
+
+async function getImagesPerson(queryPerson) {
+  let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
+  let jsonResponse = await response.json();
+  let imagesListPerson = await jsonResponse.results;
+  console.log(imagesListPerson);
+
+
+  //console.log(imagesList);
+  /* if (imagesListPerson.length === 0) {
+    getImages('gatos');
+    alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
+  }
+  else { */
+  //createCards(imagesList);
+  // }
+}
+getImagesPerson('man');
+
 

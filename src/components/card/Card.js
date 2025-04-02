@@ -25,6 +25,10 @@ export function createCards(imagesList) {
   let numberOfImagesPerColumn = Math.ceil(imagesList.length / numberOfColumns);
   //console.log(numberOfImagesPerColumn);
 
+  //Meter personas
+
+
+
   for (let i = 0; i < imagesList.length - 9; i++) {
 
     let imgParaUsar = imagesList[i].urls.thumb;
