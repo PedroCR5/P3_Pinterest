@@ -3,9 +3,10 @@ import { createButton } from "../button/button";
 import "./card.css";
 //simport { pixelImg } from "../../../pixel";
 
+
 export function createCards(imagesList) {
   //console.log(imagesList);
-
+  console.log(imagesListPerson);
   const divMainContainer = document.querySelector(".mainContainerCards");
   divMainContainer.innerHTML = ``;
   //Dividir el imagesList en numberOfColumns
@@ -61,7 +62,9 @@ export function createCards(imagesList) {
        
         <div class="cardBottomPart">
         
-          <canvas class="imgPersonRound" id="miImagenCanvas${i}"></canvas>
+          <canvas class="imgPersonRound" id="miImagenCanvas${i}" style="url('${imgParaUsar}')"></canvas>
+                    <img style="url('${imgParaUsar}')" class="upImg" />
+
           <p class="cardPUser${i} name"> </p>
           <img src="./assets/upImage.png" class="upImg" />
           <p class="cardPDate${i} date"> </p>
