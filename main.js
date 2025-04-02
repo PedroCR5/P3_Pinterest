@@ -53,7 +53,7 @@ import { createColumns } from './src/components/cardContainers/cardContainer';
 //import { pixelImg } from './pixel.js';
 
 export let windowWidth = (window.innerWidth / 2.3);
-export { numberOfColumns };
+export { numberOfColumns, imagesListPerson };
 
 //pixelImg()
 
@@ -98,13 +98,16 @@ async function getImages(query) {
   imagesList = await jsonResponse.results;
 
 
-  console.log(imagesList);
+  //console.log(imagesList);
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
   }
   else {
+    //console.log(`vamos a crear cards`);
+
     createCards(imagesList);
+
   }
 }
 getImages('dog');
@@ -143,13 +146,22 @@ let imagesListP = {}
         </div>`
 }
 getImagesPeople('cara') */
-
-/* async function getImagesPerson(queryPerson) {
+const imagesListPerson = []
+async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
-  let imagesListPerson = await jsonResponse.results;
+  let imagesListPersonA = await jsonResponse.results;
+  imagesListPerson.push(imagesListPersonA);
+  console.log(imagesListPersonA);
   console.log(imagesListPerson);
+
+  //return imagesListPerson
 }
-getImagesPerson('man'); */
+getImagesPerson('man');
+//console.log(imagesListPersonFile);
+console.log(imagesListPerson);
+
+
+
 
 
