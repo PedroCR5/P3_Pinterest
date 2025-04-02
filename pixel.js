@@ -63,5 +63,5 @@ export function pixelImg(imgUsadaCard, iCard) {
   const pruebaRGB = "rgb(255,0,0)";
 
   return pruebaRGB;
-  return valorOk
+  //return valorOk
 }

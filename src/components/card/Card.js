@@ -1,7 +1,7 @@
 import { windowWidth, numberOfColumns } from "../../../main";
 import { createButton } from "../button/button";
 import "./card.css";
-import { pixelImg } from "../../../pixel";
+//simport { pixelImg } from "../../../pixel";
 
 export function createCards(imagesList) {
   const divMainContainer = document.querySelector(".mainContainerCards");
@@ -83,9 +83,9 @@ export function createCards(imagesList) {
     <img class="imgCamera" src="./assets/camera.png" alt="pinterest">
     <span class="likesHeart">+53</span>
     `
-    const BgColorRound = pixelImg(imgParaUsar, i);
-    console.log(BgColorRound);
-    document.getElementById(`miImagen${i}`).style.border = `10px solid ${BgColorRound}`;
+    //const BgColorRound = pixelImg(imgParaUsar, i);
+    //console.log(BgColorRound);
+    //document.getElementById(`miImagen${i}`).style.border = `10px solid ${BgColorRound}`;
 
 
   }

@@ -79,14 +79,14 @@ divApp.innerHTML =
 
 
 <main> 
-<div class="pruebaPerson">
-    <img class="pruebaImgPerson" src="./assets/pinterest_logo.png" alt="pinterest">
 
-</div> 
 <div class="mainContainerCards">
 </div> </main>`;
 
-
+//<div class="pruebaPerson">
+//    <img class="pruebaImgPerson" src="./assets/pinterest_logo.png" alt="pinterest">
+//
+//</div> 
 createColumns()
 
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
@@ -98,7 +98,7 @@ async function getImages(query) {
   imagesList = await jsonResponse.results;
 
 
-  //console.log(imagesList);
+  console.log(imagesList);
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
@@ -144,22 +144,12 @@ let imagesListP = {}
 }
 getImagesPeople('cara') */
 
-async function getImagesPerson(queryPerson) {
+/* async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   let imagesListPerson = await jsonResponse.results;
   console.log(imagesListPerson);
-
-
-  //console.log(imagesList);
-  /* if (imagesListPerson.length === 0) {
-    getImages('gatos');
-    alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
-  }
-  else { */
-  //createCards(imagesList);
-  // }
 }
-getImagesPerson('man');
+getImagesPerson('man'); */
 
 
