@@ -40,8 +40,11 @@ export function createCards(imagesList) {
     let imgParaUsar = imagesList[i].urls.thumb;
     let heightImg = imagesList[i].height / 10;
     let widthImg = imagesList[i].width / 10;
+    let imgPerson = imagesListPerson[i].urls.thumb;
+    console.log(imgPerson);
+
     //console.log(numberOfColumns);
-    //console.log(`Hola1`);
+    console.log(`Hola1`);
 
     divMainContainer.innerHTML +=
       `<div class="cardDiv">
@@ -62,14 +65,30 @@ export function createCards(imagesList) {
        
         <div class="cardBottomPart">
         
-          <canvas class="imgPersonRound" id="miImagenCanvas${i}" style="url('${imgParaUsar}')"></canvas>
-                    <img style="url('${imgParaUsar}')" class="upImg" />
+          <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsar}" />
+                    
 
           <p class="cardPUser${i} name"> </p>
           <img src="./assets/upImage.png" class="upImg" />
           <p class="cardPDate${i} date"> </p>
         </div>
       </div>`
+    /* window.onload = function () {
+      // Obtener el elemento canvas y su contexto
+      var canvas = document.getElementByClass('imgPersonRound');
+      var ctx = canvas.getContext('2d');
+
+      // Crear una nueva imagen
+      var img = new Image();
+      img.src = '${imgParaUsar}'; // Cambia esto a la ruta de tu imagen
+
+      // Dibujar la imagen en el canvas cuando se haya cargado
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      };
+    };
+ */
+
     const imgImageDiv = document.querySelector(`.imgImageDiv${i}`);
     //console.log(imgImageDiv);
 
