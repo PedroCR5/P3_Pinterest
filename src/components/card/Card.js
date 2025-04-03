@@ -40,8 +40,10 @@ export function createCards(imagesList) {
     let imgParaUsar = imagesList[i].urls.thumb;
     let heightImg = imagesList[i].height / 10;
     let widthImg = imagesList[i].width / 10;
-    let imgPerson = imagesListPerson[i].urls.thumb;
-    console.log(imgPerson);
+    //let imgPerson = imagesListPerson[i].urls.thumb;
+    let prueba = []
+    prueba = imagesListPerson[0];
+    console.log(prueba);
 
     //console.log(numberOfColumns);
     console.log(`Hola1`);
