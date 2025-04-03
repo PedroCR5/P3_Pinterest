@@ -153,16 +153,51 @@ async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   let imagesListPersonA = await jsonResponse.results;
-  imagesListPerson.push(imagesListPersonA);
-  //console.log(imagesListPersonA);
-  //console.log(imagesListPerson);
+  //imagesListPerson = JSON.parse(JSON.stringify(imagesListPersonA));
+  /* let prueba1 = imagesListPersonA.map(e);
+  console.log(prueba1); */
+  //let prueba4 = ["manzana", "banana", "cereza"];
+  imagesListPersonA.forEach(function (fruta) {
+    console.log(fruta);
+    console.log(fruta.urls.thumb);
+  });
+  console.log(imagesListPersonA);
+  console.log(imagesListPerson);
 
   //return imagesListPerson
 }
 getImagesPerson('man');
 //console.log(imagesListPersonFile);
 //console.log(imagesListPerson);
-let prueba = []
+let prueba = [];
+console.log(imagesListPerson);
+console.log(imagesListPerson[1]);
+
+console.log(imagesListPerson[0]);
+
+//console.log(imagesListPerson);
+//const color1 = imagesListPerson[0][1].color;
+
+//console.log(color1);
+const innerArray = imagesListPerson[0];  // El primer array interior
+//const color2 = innerArray[1].color; // Acceder al color del segundo objeto dentro de ese array
+
+console.log(innerArray);
+
+console.log(imagesListPerson);  // Muestra toda la estructura de datos
+console.log(imagesListPerson, [0]);  // Muestra el primer array
+//console.log(imagesListPerson[0][1]);  // Muestra el segundo objeto dentro del primer array
+
+if (imagesListPerson[0] && imagesListPerson[0][1]) {
+  const color = imagesListPerson[0][1].color;
+  console.log(color);  // Esto debería mostrar el color si existe
+} else {
+  console.log('Elemento no encontrado o fuera de rango');
+}
+
+
+
+
 prueba = imagesListPerson;
 console.log(`hola`);
 
