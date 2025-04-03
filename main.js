@@ -61,6 +61,8 @@ let numberOfColumns = Math.ceil(window.innerWidth / 300);
 //console.log(numberOfColumns);
 
 
+
+
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -152,16 +154,55 @@ async function getImagesPerson(queryPerson) {
   let jsonResponse = await response.json();
   let imagesListPersonA = await jsonResponse.results;
   imagesListPerson.push(imagesListPersonA);
-  console.log(imagesListPersonA);
-  console.log(imagesListPerson);
+  //console.log(imagesListPersonA);
+  //console.log(imagesListPerson);
 
   //return imagesListPerson
 }
 getImagesPerson('man');
 //console.log(imagesListPersonFile);
-console.log(imagesListPerson);
+//console.log(imagesListPerson);
+let prueba = []
+prueba = imagesListPerson;
+console.log(`hola`);
+
+prueba.forEach(element => {
+  console.log(`hola`);
+  let e = element
+  console.log(e); // Muestra el id de cada objeto
+  // Realiza otras operaciones con 'element' según sea necesario
+});
+console.log(`hola`);
 
 
 
+/* console.log(prueba);
+const prueba1 = prueba.map(sub => sub[0])
+console.log(prueba1); */
+//let subArray = prueba.slice(0, 1);
+//console.log(subArray);
+//const subArray2 = prueba[0];
+//console.log(subArray2);
+/* const arrayPlano = prueba.flat();
+console.log(arrayPlano);
+const arrayDeCaracteres = Array.from(prueba);
+console.log(arrayDeCaracteres); */
 
+//const subArray3 = prueba[0]; // Accede al primer elemento del array principal
+//console.log(subArray3); // Muestra el subarray completo
+//console.log(subArray3[0]); // Muestra el primer objeto dentro del subarray
+/* 
+const arrayPrincipal = [
+  [
+    { id: 'DItYlc26zVI', slug: 'mens-blue-and-white-button-up-collared-top-DItYlc26zVI', created_at: '2019-09-16T02:55:02Z', updated_at: '2025-04-02T09:22:55Z' },
+    { id: 'KIPqvvTOC1s', slug: 'man-crossing-both-arms-KIPqvvTOC1s', created_at: '2019-05-14T19:44:00Z', updated_at: '2025-04-02T06:19:01Z' },
+    { id: 'G-jo31ESuRE', slug: 'man-in-white-and-black-pinstripe-suit-jacket-G-jo31ESuRE', created_at: '2016-11-29T14:21:58Z', updated_at: '2025-04-02T06:02:38Z' },
+    { id: 'ymo_yC_N_2o', slug: 'man-in-gray-suit-jacket-and-black-pants-standing-o...brown-concrete-pathway-during-daytime-ymo_yC_N_2o', created_at: '2020-02-11T01:39:23Z', updated_at: '2025-04-02T06:29:48Z' },
+    { id: 'd1UPkiFd04A', slug: 'man-standing-near-white-wall-d1UPkiFd04A', created_at: '2018-10-15T02:50:36Z', updated_at: '2025-04-02T06:13:00Z' },
 
+  ]
+];
+
+const subArray = arrayPrincipal[0]; // Accede al primer elemento del array principal
+console.log(subArray); // Muestra el subarray completo
+console.log(subArray[0]); // Muestra el primer objeto dentro del subarray */
