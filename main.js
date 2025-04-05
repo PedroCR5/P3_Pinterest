@@ -34,9 +34,10 @@
 //? coger la foto de una persona y nombre
 //? he cogido una imagen de persona y falta que se pinte en el html
 //? Saqué lista de hombres, falta darselo a Card.js para que pinte una en cada Card.
+//? Podría poner el nombre a buscar foto de persona y coger la primera.
 // mejorar icono visitar
 //Se limpiará el input después de cada búsqueda para que no moleste hacer una nueva búsqueda
-//? Border foto persona color mayoritario de la foto
+// Border foto persona color mayoritario de la foto
 // Hacer la imagen formato de persona
 // Ponerle borde
 //? Poner foto persona
@@ -50,18 +51,11 @@ import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/card';
 import { createColumns } from './src/components/cardContainers/cardContainer';
-//import { pixelImg } from './pixel.js';
-
 export let windowWidth = (window.innerWidth / 2.3);
 export { numberOfColumns, imagesListPerson };
 
-//pixelImg()
-
 let numberOfColumns = Math.ceil(window.innerWidth / 300);
 //console.log(numberOfColumns);
-
-
-
 
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
@@ -85,10 +79,7 @@ divApp.innerHTML =
 <div class="mainContainerCards">
 </div> </main>`;
 
-//<div class="pruebaPerson">
-//    <img class="pruebaImgPerson" src="./assets/pinterest_logo.png" alt="pinterest">
-//
-//</div> 
+
 createColumns()
 
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
@@ -98,18 +89,13 @@ async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-
-
-  //console.log(imagesList);
+  console.log(imagesList);
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
   }
   else {
-    //console.log(`vamos a crear cards`);
-
     createCards(imagesList);
-
   }
 }
 getImages('dog');
@@ -122,32 +108,11 @@ document.getElementById('word').addEventListener('keydown', function (event) {
   }
 });
 
-
 document.querySelector(`.iconePinterest`).onclick = function () {
   getImages('dog');
-}
-
+};
 let imagesListP = {}
 
-/* async function getImagesPeople(query) {
-  let responseP = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
-  let jsonResponseP = await responseP.json();
-  imagesListP = await jsonResponseP.results;
-  console.log(imagesListP);
-  const divPruebas = document.querySelector(".pruebas");
-  let imgParaUsarPersona = imagesListP[0].urls.thumb;
-  console.log(imgParaUsarPersona);
-
-  divPruebas.innerHTML +=
-    `<div class="A1">
-  
-          <div style="border: solid; background-image: url('${imgParaUsarPersona}'); height: ${heightImg}px; width: ${windowWidth}px">
-  
-          </div>  
-  
-        </div>`
-}
-getImagesPeople('cara') */
 const imagesListPerson = []
 async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
@@ -158,11 +123,11 @@ async function getImagesPerson(queryPerson) {
   console.log(prueba1); */
   //let prueba4 = ["manzana", "banana", "cereza"];
   imagesListPersonA.forEach(function (fruta) {
-    console.log(fruta);
-    console.log(fruta.urls.thumb);
+    //console.log(fruta);
+    //console.log(fruta.urls.thumb);
   });
-  console.log(imagesListPersonA);
-  console.log(imagesListPerson);
+  //console.log(imagesListPersonA);
+  //console.log(imagesListPerson);
 
   //return imagesListPerson
 }

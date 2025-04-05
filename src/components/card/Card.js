@@ -1,47 +1,34 @@
 import { windowWidth, numberOfColumns, imagesListPerson } from "../../../main";
 import { createButton } from "../button/button";
 import "./card.css";
-//simport { pixelImg } from "../../../pixel";
-
 
 export function createCards(imagesList) {
   //console.log(imagesList);
   console.log(imagesListPerson);
   const divMainContainer = document.querySelector(".mainContainerCards");
   divMainContainer.innerHTML = ``;
-  //Dividir el imagesList en numberOfColumns
-  // o repartir
-
-  /* const divs = [];
-  for (let j = 0; j < 4; j++) {
-    divs.push += (document.getElementById(`div${j + 1}`))
-  } */
-  //console.log(divs);
-
-  /* let nombresColumnas = [];
-
-  for (let j = 0; j < numberOfColumns; j++) {
-    nombresColumnas.push(document.getElementById(`div${j + 1}`))
-  } */
-  //console.log(nombresColumnas);
-
-  //let numberOfImagesPerColumn = Math.ceil(imagesList.length / numberOfColumns);
-  //console.log(numberOfImagesPerColumn);
 
   //Meter personas
 
 
 
   for (let i = 0; i < imagesList.length; i++) {
-    //console.log(`Hola0`);
-    //console.log(imagesList);
-    //let imgPerson = imagesListPerson[0][0].urls.thumb;
-    //[0][0].urls.thumb
+
+
     let imgParaUsar = imagesList[i].urls.thumb;
     let heightImg = imagesList[i].height / 10;
     let widthImg = imagesList[i].width / 10;
     //let imgPerson = imagesListPerson[i].urls.thumb;
+    //Random color
 
+    function getRandomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+    const randomColorImg = getRandomColor()
+    console.log(randomColorImg);
 
     //console.log(numberOfColumns);
     //console.log(`Hola1`);
@@ -65,7 +52,7 @@ export function createCards(imagesList) {
        
         <div class="cardBottomPart">
         
-          <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsar}" />
+          <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsar}" style="border-color: ${randomColorImg}"/>
                     
 
           <p class="cardPUser${i} name"> </p>
@@ -73,24 +60,8 @@ export function createCards(imagesList) {
           <p class="cardPDate${i} date"> </p>
         </div>
       </div>`
-    /* window.onload = function () {
-      // Obtener el elemento canvas y su contexto
-      var canvas = document.getElementByClass('imgPersonRound');
-      var ctx = canvas.getContext('2d');
-
-      // Crear una nueva imagen
-      var img = new Image();
-      img.src = '${imgParaUsar}'; // Cambia esto a la ruta de tu imagen
-
-      // Dibujar la imagen en el canvas cuando se haya cargado
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      };
-    };
- */
 
     const imgImageDiv = document.querySelector(`.imgImageDiv${i}`);
-    //console.log(imgImageDiv);
 
     const cardPUser = document.querySelector(`.cardPUser${i}`)
     const cardPDate = document.querySelector(`.cardPDate${i}`)
@@ -101,9 +72,7 @@ export function createCards(imagesList) {
     let month = dateCreated.substring(5, 7);
     let year = dateCreated.substring(0, 4);
     cardPDate.innerText = `${day}/${month}/${year}`;
-    //console.log(`Hola2`);
 
-    // Añadimos la img y span a los button de la primera card.
     const imgButtonHeart = document.querySelector(`.heart`);
     imgButtonHeart.innerHTML = `
     <img class="imgHeart" src="./assets/heart.png" alt="pinterest">
@@ -114,17 +83,6 @@ export function createCards(imagesList) {
     <img class="imgCamera" src="./assets/camera.png" alt="pinterest">
     <span class="likesHeart">+53</span>
     `
-    //console.log(`Hola3`);
-
-    //const BgColorRound = pixelImg(imgParaUsar, i);
-    //console.log(BgColorRound);
-    //document.getElementById(`miImagen${i}`).style.border = `10px solid ${BgColorRound}`;
-
 
   }
 }
-
-/* <div class="personBox">
-              <img class="imgPersonDiv${i} imgPersonDiv" src="./assets/upImage.png"/>
-             
-            </div> */
