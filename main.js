@@ -89,7 +89,7 @@ async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-  console.log(imagesList);
+  //console.log(imagesList);
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
@@ -111,68 +111,80 @@ document.getElementById('word').addEventListener('keydown', function (event) {
 document.querySelector(`.iconePinterest`).onclick = function () {
   getImages('dog');
 };
-let imagesListP = {}
+let imagesListP = []
 
 const imagesListPerson = []
 async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   let imagesListPersonA = await jsonResponse.results;
+  imagesListP = await jsonResponse.results;
+  console.log(imagesListP[0].urls.small);
+
   //imagesListPerson = JSON.parse(JSON.stringify(imagesListPersonA));
   /* let prueba1 = imagesListPersonA.map(e);
   console.log(prueba1); */
   //let prueba4 = ["manzana", "banana", "cereza"];
-  imagesListPersonA.forEach(function (fruta) {
-    //console.log(fruta);
-    //console.log(fruta.urls.thumb);
-  });
+  /* imagesListPersonA.forEach(function (fruta) {
+    
+  }); */
   //console.log(imagesListPersonA);
   //console.log(imagesListPerson);
 
-  //return imagesListPerson
+  return imagesListPersonA
 }
-getImagesPerson('man');
+//console.log(imagesListP);
+
+var prueba5 = []
+//getImagesPerson('man');
 //console.log(imagesListPersonFile);
 //console.log(imagesListPerson);
-let prueba = [];
-console.log(imagesListPerson);
+imagesListP = getImagesPerson('man').then(data => {
+  console.log(data);
+  prueba5 = data[0];
+  console.log(prueba5.urls.small);
+}).catch(err => {
+  console.log(err);
+});
+/* console.log(imagesListPerson);
 console.log(imagesListPerson[1]);
 
-console.log(imagesListPerson[0]);
+console.log(imagesListPerson[0]); */
 
-//console.log(imagesListPerson);
+//console.log(prueba5);
 //const color1 = imagesListPerson[0][1].color;
 
-//console.log(color1);
-const innerArray = imagesListPerson[0];  // El primer array interior
+console.log(imagesListP);
+const innerArray = imagesListPerson;  // El primer array interior
 //const color2 = innerArray[1].color; // Acceder al color del segundo objeto dentro de ese array
 
-console.log(innerArray);
+//console.log(`${innerArray}`);
 
-console.log(imagesListPerson);  // Muestra toda la estructura de datos
-console.log(imagesListPerson, [0]);  // Muestra el primer array
+//console.log(imagesListPerson);  // Muestra toda la estructura de datos
+//console.log(imagesListPerson, [0]);  // Muestra el primer array
 //console.log(imagesListPerson[0][1]);  // Muestra el segundo objeto dentro del primer array
 
-if (imagesListPerson[0] && imagesListPerson[0][1]) {
+/* if (imagesListPerson[0] && imagesListPerson[0][1]) {
   const color = imagesListPerson[0][1].color;
-  console.log(color);  // Esto debería mostrar el color si existe
+  console.log(color);
 } else {
   console.log('Elemento no encontrado o fuera de rango');
-}
+}; */
 
 
 
 
-prueba = imagesListPerson;
-console.log(`hola`);
+/* prueba = imagesListPerson;
+console.log(imagesListPerson);
 
-prueba.forEach(element => {
+console.log(`hola`); */
+
+/* prueba.forEach(element => {
   console.log(`hola`);
   let e = element
-  console.log(e); // Muestra el id de cada objeto
-  // Realiza otras operaciones con 'element' según sea necesario
+  console.log(e);
 });
-console.log(`hola`);
+console.log(`hola`); */
 
 
 

@@ -4,7 +4,7 @@ import "./card.css";
 
 export function createCards(imagesList) {
   //console.log(imagesList);
-  console.log(imagesListPerson);
+  //console.log(imagesListPerson);
   const divMainContainer = document.querySelector(".mainContainerCards");
   divMainContainer.innerHTML = ``;
 
@@ -28,7 +28,7 @@ export function createCards(imagesList) {
       return `rgb(${r}, ${g}, ${b})`;
     }
     const randomColorImg = getRandomColor()
-    console.log(randomColorImg);
+    //console.log(randomColorImg);
 
     //console.log(numberOfColumns);
     //console.log(`Hola1`);
