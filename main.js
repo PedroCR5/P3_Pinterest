@@ -120,6 +120,9 @@ async function getImagesPerson(queryPerson) {
   let imagesListPersonA = await jsonResponse.results;
   imagesListP = await jsonResponse.results;
   console.log(imagesListP[0].urls.small);
+  console.log(imagesListPersonA);
+  console.log(imagesListPersonA[0].urls.small);
+  //? voy a pasar esto a la card correspondiente para que salga siempre
 
   //imagesListPerson = JSON.parse(JSON.stringify(imagesListPersonA));
   /* let prueba1 = imagesListPersonA.map(e);
