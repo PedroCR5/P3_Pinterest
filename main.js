@@ -21,7 +21,7 @@
 // cuando pones busqueda fallida, que deje la última o dogs y de un aviso y no quede pillado
 // me queda pillado con búsqueda fallida
 //!El código está correctamente repartido en componentes
-//? Foto persona--> componente
+// Foto persona--> componente
 //? Iconos redondos de info-->componente
 //!Se recogen correctamente los datos correspondientes para conseguir un diseño como el aportado
 //? Columnas Desktop 5
@@ -29,23 +29,11 @@
 //? crear las columnas calculadas
 //? repartir las cartas entre las columnas
 //? hacer la impresión de las cartas por columnas definidas
-//? separar hombre mujer
-//? asociar fotos a cards
-//? coger la foto de una persona y nombre
-//? he cogido una imagen de persona y falta que se pinte en el html
-//? Saqué lista de hombres, falta darselo a Card.js para que pinte una en cada Card.
-//? Podría poner el nombre a buscar foto de persona y coger la primera.
-// mejorar icono visitar
-//Se limpiará el input después de cada búsqueda para que no moleste hacer una nueva búsqueda
-// Border foto persona color mayoritario de la foto
-// Hacer la imagen formato de persona
-// Ponerle borde
-//? Poner foto persona
-// Mover la img persona a su posición
+//? Poner a chica un nombre y a chico otro
+
 //!Habrá una manera de volver al estado inicial de la página, por ejemplo haciendo click en el propio logo, y que nos muestre la primera petición que se hizo
 //? contador para primera pulsación de enter y busqueda.
 //? guardad esa busqueda como firstSearching para pintarla al pulsar icono Pinterest
-
 
 import './style.css';
 import { createButton } from './src/components/button/button';
@@ -53,10 +41,7 @@ import { createCards } from './src/components/card/card';
 import { createColumns } from './src/components/cardContainers/cardContainer';
 export let windowWidth = (window.innerWidth / 2.3);
 export { numberOfColumns, imagesListPerson };
-
 let numberOfColumns = Math.ceil(window.innerWidth / 300);
-//console.log(numberOfColumns);
-
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -70,26 +55,19 @@ divApp.innerHTML =
   </div>
 </header> 
 <div class="myDiv">
-      
     </div>
-
-
 <main> 
-
 <div class="mainContainerCards">
 </div> </main>`;
-
-
 createColumns()
-
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 const endPoint = 'https://api.unsplash.com/search/photos';
+//Información de Unsplash. Pintada en HTML.
 let imagesList = {}
 async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-  //console.log(imagesList);
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
@@ -99,7 +77,7 @@ async function getImages(query) {
   }
 }
 getImages('dog');
-
+//Introducción de palabra a buscar
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
@@ -107,117 +85,38 @@ document.getElementById('word').addEventListener('keydown', function (event) {
     event.target.value = '';
   }
 });
-
 document.querySelector(`.iconePinterest`).onclick = function () {
   getImages('dog');
 };
 let imagesListP = []
-
 const imagesListPerson = []
 async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   let imagesListPersonA = await jsonResponse.results;
   imagesListP = await jsonResponse.results;
-  console.log(imagesListP[0].urls.small);
-  console.log(imagesListPersonA);
-  console.log(imagesListPersonA[0].urls.small);
-  //? voy a pasar esto a la card correspondiente para que salga siempre
+  if (queryPerson === 'person') {
+    for (let k = 0; k < 4; k++) {
+      const element = document.getElementById(`miImagenCanvas${k}`);
+      element.src = imagesListPersonA[0].urls.small;
+      console.log(imagesListPersonA);
 
-  //imagesListPerson = JSON.parse(JSON.stringify(imagesListPersonA));
-  /* let prueba1 = imagesListPersonA.map(e);
-  console.log(prueba1); */
-  //let prueba4 = ["manzana", "banana", "cereza"];
-  /* imagesListPersonA.forEach(function (fruta) {
-    
-  }); */
-  //console.log(imagesListPersonA);
-  //console.log(imagesListPerson);
+      /*  const elementName = document.getElementById(`cardPUser${k}`);
+       elementName.innerText = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
+       console.log(imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name); */
 
+    }
+  } else {
+    for (let k = 4; k < 10; k++) {
+      const element = document.getElementById(`miImagenCanvas${k}`);
+      element.src = imagesListPersonA[0].urls.small;
+      //const elementName = document.getElementById(`cardPUser${k}`);
+      /*   let example = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
+        elementName.innerText = '${example}';
+        console.log(imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name); */
+    }
+  }
   return imagesListPersonA
 }
-//console.log(imagesListP);
-
-var prueba5 = []
-//getImagesPerson('man');
-//console.log(imagesListPersonFile);
-//console.log(imagesListPerson);
-imagesListP = getImagesPerson('man').then(data => {
-  console.log(data);
-  prueba5 = data[0];
-  console.log(prueba5.urls.small);
-}).catch(err => {
-  console.log(err);
-});
-/* console.log(imagesListPerson);
-console.log(imagesListPerson[1]);
-
-console.log(imagesListPerson[0]); */
-
-//console.log(prueba5);
-//const color1 = imagesListPerson[0][1].color;
-
-console.log(imagesListP);
-const innerArray = imagesListPerson;  // El primer array interior
-//const color2 = innerArray[1].color; // Acceder al color del segundo objeto dentro de ese array
-
-//console.log(`${innerArray}`);
-
-//console.log(imagesListPerson);  // Muestra toda la estructura de datos
-//console.log(imagesListPerson, [0]);  // Muestra el primer array
-//console.log(imagesListPerson[0][1]);  // Muestra el segundo objeto dentro del primer array
-
-/* if (imagesListPerson[0] && imagesListPerson[0][1]) {
-  const color = imagesListPerson[0][1].color;
-  console.log(color);
-} else {
-  console.log('Elemento no encontrado o fuera de rango');
-}; */
-
-
-
-
-/* prueba = imagesListPerson;
-console.log(imagesListPerson);
-
-console.log(`hola`); */
-
-/* prueba.forEach(element => {
-  console.log(`hola`);
-  let e = element
-  console.log(e);
-});
-console.log(`hola`); */
-
-
-
-/* console.log(prueba);
-const prueba1 = prueba.map(sub => sub[0])
-console.log(prueba1); */
-//let subArray = prueba.slice(0, 1);
-//console.log(subArray);
-//const subArray2 = prueba[0];
-//console.log(subArray2);
-/* const arrayPlano = prueba.flat();
-console.log(arrayPlano);
-const arrayDeCaracteres = Array.from(prueba);
-console.log(arrayDeCaracteres); */
-
-//const subArray3 = prueba[0]; // Accede al primer elemento del array principal
-//console.log(subArray3); // Muestra el subarray completo
-//console.log(subArray3[0]); // Muestra el primer objeto dentro del subarray
-/* 
-const arrayPrincipal = [
-  [
-    { id: 'DItYlc26zVI', slug: 'mens-blue-and-white-button-up-collared-top-DItYlc26zVI', created_at: '2019-09-16T02:55:02Z', updated_at: '2025-04-02T09:22:55Z' },
-    { id: 'KIPqvvTOC1s', slug: 'man-crossing-both-arms-KIPqvvTOC1s', created_at: '2019-05-14T19:44:00Z', updated_at: '2025-04-02T06:19:01Z' },
-    { id: 'G-jo31ESuRE', slug: 'man-in-white-and-black-pinstripe-suit-jacket-G-jo31ESuRE', created_at: '2016-11-29T14:21:58Z', updated_at: '2025-04-02T06:02:38Z' },
-    { id: 'ymo_yC_N_2o', slug: 'man-in-gray-suit-jacket-and-black-pants-standing-o...brown-concrete-pathway-during-daytime-ymo_yC_N_2o', created_at: '2020-02-11T01:39:23Z', updated_at: '2025-04-02T06:29:48Z' },
-    { id: 'd1UPkiFd04A', slug: 'man-standing-near-white-wall-d1UPkiFd04A', created_at: '2018-10-15T02:50:36Z', updated_at: '2025-04-02T06:13:00Z' },
-
-  ]
-];
-
-const subArray = arrayPrincipal[0]; // Accede al primer elemento del array principal
-console.log(subArray); // Muestra el subarray completo
-console.log(subArray[0]); // Muestra el primer objeto dentro del subarray */
+getImagesPerson('man');
+getImagesPerson('person');

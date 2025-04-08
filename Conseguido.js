@@ -159,3 +159,18 @@ export function pixelImg(imgUsadaCard, iCard) {
 
   return pruebaRGB;
 } */
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// separar hombre mujer
+// asociar fotos a cards
+// coger la foto de una persona y nombre
+// he cogido una imagen de persona y falta que se pinte en el html
+// Saqué lista de hombres, falta darselo a Card.js para que pinte una en cada Card.
+// Podría poner el nombre a buscar foto de persona y coger la primera.
+// mejorar icono visitar
+//Se limpiará el input después de cada búsqueda para que no moleste hacer una nueva búsqueda
+// Border foto persona color mayoritario de la foto
+// Hacer la imagen formato de persona
+// Ponerle borde
+// Poner foto persona, chico y chica
+// Mover la img persona a su posición
