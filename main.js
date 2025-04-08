@@ -34,6 +34,7 @@
 //!Habrá una manera de volver al estado inicial de la página, por ejemplo haciendo click en el propio logo, y que nos muestre la primera petición que se hizo
 //? contador para primera pulsación de enter y busqueda.
 //? guardad esa busqueda como firstSearching para pintarla al pulsar icono Pinterest
+//? cargar de nuevo las fotos de personas
 
 import './style.css';
 import { createButton } from './src/components/button/button';
