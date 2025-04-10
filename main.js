@@ -22,14 +22,14 @@
 // me queda pillado con búsqueda fallida
 //!El código está correctamente repartido en componentes
 // Foto persona--> componente
-//? Iconos redondos de info-->componente
+// Iconos redondos de info-->componente
 //!Se recogen correctamente los datos correspondientes para conseguir un diseño como el aportado
 //? Columnas Desktop 5
-//? Descargar más de 10 fotos
+// Descargar más de 10 fotos
 //? crear las columnas calculadas
 //? repartir las cartas entre las columnas
 //? hacer la impresión de las cartas por columnas definidas
-//? Poner a chica un nombre y a chico otro
+// Poner a chica un nombre y a chico otro
 
 //!Habrá una manera de volver al estado inicial de la página, por ejemplo haciendo click en el propio logo, y que nos muestre la primera petición que se hizo
 //? contador para primera pulsación de enter y busqueda.
@@ -72,16 +72,22 @@ async function getImages(query) {
   if (imagesList.length === 0) {
     getImages('gatos');
     alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
+    getImagesPerson('man');
+    getImagesPerson('person');
   }
   else {
     createCards(imagesList);
+    getImagesPerson('man');
+    getImagesPerson('person');
   }
 }
 getImages('dog');
 //Introducción de palabra a buscar
+const firstWord = 'nada de nada';
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
+    // if (firstWord==='nada de nada')
     getImages(`${valorInput}`);
     event.target.value = '';
   }
@@ -102,15 +108,17 @@ async function getImagesPerson(queryPerson) {
       element.src = imagesListPersonA[0].urls.small;
       console.log(imagesListPersonA);
 
-      /*  const elementName = document.getElementById(`cardPUser${k}`);
-       elementName.innerText = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
-       console.log(imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name); */
+      const elementName = document.querySelector(`.cardPUser${k}`);
+      elementName.innerText = imagesListPersonA[8].user.first_name + " " + imagesListPersonA[0].user.last_name;
+      // console.log(imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name);
 
     }
   } else {
     for (let k = 4; k < 10; k++) {
       const element = document.getElementById(`miImagenCanvas${k}`);
       element.src = imagesListPersonA[0].urls.small;
+      const elementName = document.querySelector(`.cardPUser${k}`);
+      elementName.innerText = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
       //const elementName = document.getElementById(`cardPUser${k}`);
       /*   let example = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
         elementName.innerText = '${example}';
