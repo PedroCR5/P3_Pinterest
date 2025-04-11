@@ -174,3 +174,25 @@ export function pixelImg(imgUsadaCard, iCard) {
 // Ponerle borde
 // Poner foto persona, chico y chica
 // Mover la img persona a su posición
+
+
+//!Habrá una manera de volver al estado inicial de la página, por ejemplo haciendo click en el propio logo, y que nos muestre la primera petición que se hizo
+// contador para primera pulsación de enter y busqueda.
+// guardad esa busqueda como firstSearching para pintarla al pulsar icono Pinterest
+// cargar de nuevo las fotos de personas.
+
+//En este proyecto realizaremos una réplica de pinterest.
+//Esta página nos permitirá ver diferentes tipos de imágenes mediante la búsqueda que realice un usuario.
+//Será un proyecto hecho con VITE, creando componentes para repartir y reutilizar mejor nuestro código.
+//Utilizaremos la API de unsplash para realizar las peticiones y que nos permita obtener diferentes imágenes según al búsqueda.
+//Esta es la documentación de la API: https://unsplash.com/developers
+//Lo complicado del proyecto es pelearse con la documentación de la API para encontrar el endpoint idóneo para nuestras peticiones.
+//Todos los datos que aparecen pintados se obtienen mediante la API
+//TODOS los datos mostrados en el diseño propuesto, se pueden obtener mediante la propia API de Unsplash, incluidas las imágenes de los usuarios de cada foto.
+
+//!El código está correctamente repartido en componentes
+// Foto persona--> componente
+// Iconos redondos de info-->componente
+
+//!El proyecto cumple con los requisitos mínimos del Proyecto 1 en cuanto al HTML y CSS
+// hacer variables margenes ...

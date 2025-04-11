@@ -1,28 +1,15 @@
-//En este proyecto realizaremos una réplica de pinterest.
-//Esta página nos permitirá ver diferentes tipos de imágenes mediante la búsqueda que realice un usuario.
-//Será un proyecto hecho con VITE, creando componentes para repartir y reutilizar mejor nuestro código.
-//Utilizaremos la API de unsplash para realizar las peticiones y que nos permita obtener diferentes imágenes según al búsqueda.
-//Esta es la documentación de la API: https://unsplash.com/developers
-//!Lo complicado del proyecto es pelearse con la documentación de la API para encontrar el endpoint idóneo para nuestras peticiones.
-//!Todos los datos que aparecen pintados se obtienen mediante la API
-//!TODOS los datos mostrados en el diseño propuesto, se pueden obtener mediante la propia API de Unsplash, incluidas las imágenes de los usuarios de cada foto.
+
 //!DISEÑO PROPUESTO: https://www.figma.com/design/gLRrcetLfS9KkG2o43qpfB/PROYECTO3?node-id=0-1&t=mq0pGZimhN0ytHEM-1
 //!Para la entrega bastará con que subas tu proyecto a github y nos facilites en enlace en el input que tienes a la derecha
 //!EL REPOSITORIO DE GITHUB DEBE ESTAR PÚBLICO PARA PODER REALIZAR LA CORRECCIÓN.
 
-
-
-//!El proyecto cumple con los requisitos mínimos del Proyecto 1 en cuanto al HTML y CSS
-//? hacer variables margenes ...
 //!Web FULL RESPONSIVE
 //? Hacer header para Desktop
 //? Responsive movil 393, desktop 1440.
 //Si no se encuentran imágenes con la frase introducida, se realizará otra petición con la palabra gatos y la sugerencia de utilizar otra frase o palabra para una búsqueda correcta
 // cuando pones busqueda fallida, que deje la última o dogs y de un aviso y no quede pillado
 // me queda pillado con búsqueda fallida
-//!El código está correctamente repartido en componentes
-// Foto persona--> componente
-// Iconos redondos de info-->componente
+
 //!Se recogen correctamente los datos correspondientes para conseguir un diseño como el aportado
 //? Columnas Desktop 5
 // Descargar más de 10 fotos
@@ -31,10 +18,6 @@
 //? hacer la impresión de las cartas por columnas definidas
 // Poner a chica un nombre y a chico otro
 
-//!Habrá una manera de volver al estado inicial de la página, por ejemplo haciendo click en el propio logo, y que nos muestre la primera petición que se hizo
-//? contador para primera pulsación de enter y busqueda.
-//? guardad esa busqueda como firstSearching para pintarla al pulsar icono Pinterest
-//? cargar de nuevo las fotos de personas
 
 import './style.css';
 import { createButton } from './src/components/button/button';
@@ -43,6 +26,8 @@ import { createColumns } from './src/components/cardContainers/cardContainer';
 export let windowWidth = (window.innerWidth / 2.3);
 export { numberOfColumns, imagesListPerson };
 let numberOfColumns = Math.ceil(window.innerWidth / 300);
+//console.log(numberOfColumns);
+
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -59,6 +44,8 @@ divApp.innerHTML =
     </div>
 <main> 
 <div class="mainContainerCards">
+</div>
+<div class="mainContainerCards2">
 </div> </main>`;
 createColumns()
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
@@ -83,17 +70,30 @@ async function getImages(query) {
 }
 getImages('dog');
 //Introducción de palabra a buscar
-const firstWord = 'nada de nada';
+let firstWord = 'nada de nada';
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
-    // if (firstWord==='nada de nada')
+    console.log(firstWord);
+
+    if (firstWord === 'nada de nada') {
+      firstWord = event.target.value;
+      console.log(firstWord);
+    }
+    console.log(firstWord);
+
     getImages(`${valorInput}`);
     event.target.value = '';
   }
 });
 document.querySelector(`.iconePinterest`).onclick = function () {
-  getImages('dog');
+  if (firstWord === 'nada de nada') {
+    getImages('cat');
+  }
+  else {
+    getImages(firstWord)
+  };
+
 };
 let imagesListP = []
 const imagesListPerson = []
@@ -106,7 +106,7 @@ async function getImagesPerson(queryPerson) {
     for (let k = 0; k < 4; k++) {
       const element = document.getElementById(`miImagenCanvas${k}`);
       element.src = imagesListPersonA[0].urls.small;
-      console.log(imagesListPersonA);
+      //console.log(imagesListPersonA);
 
       const elementName = document.querySelector(`.cardPUser${k}`);
       elementName.innerText = imagesListPersonA[8].user.first_name + " " + imagesListPersonA[0].user.last_name;
