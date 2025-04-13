@@ -80,3 +80,11 @@
 .icon {
   background-color: var(--rtc-bgColor2);
 }
+
+.mainContainerCards2 {
+  display: flex;
+}
+.containersList {
+  display: flex;
+  flex-direction: column;
+}

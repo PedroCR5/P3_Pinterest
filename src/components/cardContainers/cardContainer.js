@@ -3,8 +3,8 @@ let numberOfColumnsHere = 2;
 console.log(numberOfColumnsHere);
 
 export function createColumns() {
-  /*   const divMainContainer = document.querySelector(".mainContainerCards2");
-    for (let i = 0; i < numberOfColumnsHere; i++) {
-      divMainContainer.innerHTML += `<div class="container${i + 1}" id=div${i + 1}></div>`
-    } */
+  const divMainContainer = document.querySelector(".mainContainerCards2");
+  for (let i = 0; i < numberOfColumnsHere; i++) {
+    divMainContainer.innerHTML += `<div class="container${i + 1} containersList" id=div${i + 1}></div>`
+  }
 }

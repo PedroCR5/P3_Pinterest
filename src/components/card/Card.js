@@ -5,8 +5,8 @@ import "./card.css";
 export function createCards(imagesList) {
   //console.log(imagesList);
   //console.log(imagesListPerson);
-  const divMainContainer = document.querySelector(".mainContainerCards");
-  divMainContainer.innerHTML = ``;
+  //const divMainContainer = document.querySelector(".mainContainerCards");
+
   //Hacer columnas
   //!Prueba columnas
   /*   const divMainContainer2 = document.querySelector(".mainContainerCards2");
@@ -97,7 +97,10 @@ export function createCards(imagesList) {
   
     } */
   //!Prueba columnas
-
+  const divMainContainer1 = document.querySelector("#div1");
+  const divMainContainer2 = document.querySelector("#div2");
+  divMainContainer1.innerHTML = ``;
+  divMainContainer2.innerHTML = ``;
 
   //Meter personas
 
@@ -124,8 +127,88 @@ export function createCards(imagesList) {
     //console.log(numberOfColumns);
     //console.log(`Hola1`);
 
-    divMainContainer.innerHTML +=
-      `<div class="cardDiv">
+    /*   divMainContainer.innerHTML +=
+        `<div class="cardDiv">
+            <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); height: ${heightImg}px; width: ${windowWidth}px">
+              <img class="imgImageDiv${i}" />
+              <div class="initialIconsBox">
+    
+                ${createButton({ texto: "+53", size: "s", classInfo: `camera off on${i}` })}
+                <div class="visitsBox">
+                  ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center on${i}` })}
+                 
+                </div>
+                ${createButton({ texto: `${imagesList[i].likes}`, size: "s", classInfo: `heart off on${i}` })}
+              </div>
+              
+              
+            </div>  
+           
+            <div class="cardBottomPart">
+            
+              <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsar}" style="border-color: ${randomColorImg}"/>
+                        
+    
+              <p class="cardPUser${i} name"> </p>
+              <img src="./assets/upImage.png" class="upImg" />
+              <p class="cardPDate${i} date"> </p>
+            </div>
+          </div>` */
+    if (i < imagesList.length / 2) {
+      divMainContainer1.innerHTML +=
+        `<div class="cardDiv">
+            <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); height: ${heightImg}px; width: ${windowWidth}px">
+              <img class="imgImageDiv${i}" />
+              <div class="initialIconsBox">
+    
+                ${createButton({ texto: "+53", size: "s", classInfo: `camera off on${i}` })}
+                <div class="visitsBox">
+                  ${createButton({ texto: "Visitar", size: "l", classInfo: `visitar off center on${i}` })}
+                 
+                </div>
+                ${createButton({ texto: `${imagesList[i].likes}`, size: "s", classInfo: `heart off on${i}` })}
+              </div>
+              
+              
+            </div>  
+           
+            <div class="cardBottomPart">
+            
+              <img class="imgPersonRound" id="miImagenCanvas${i}" src="${imgParaUsar}" style="border-color: ${randomColorImg}"/>
+                        
+    
+              <p class="cardPUser${i} name"> </p>
+              <img src="./assets/upImage.png" class="upImg" />
+              <p class="cardPDate${i} date"> </p>
+            </div>
+          </div>`;
+      const imgImageDiv = document.querySelector(`.imgImageDiv${i}`);
+
+      const cardPUser = document.querySelector(`.cardPUser${i}`)
+      const cardPDate = document.querySelector(`.cardPDate${i}`)
+
+      cardPUser.innerText = imagesList[i].user.name;
+      let dateCreated = imagesList[i].created_at;
+      let day = dateCreated.substring(8, 10);
+      let month = dateCreated.substring(5, 7);
+      let year = dateCreated.substring(0, 4);
+      cardPDate.innerText = `${day}/${month}/${year}`;
+
+      const imgButtonHeart = document.querySelector(`.heart`);
+      imgButtonHeart.innerHTML = `
+            <img class="imgHeart" src="./assets/heart.png" alt="pinterest">
+            <span class="likesHeart">${imagesList[i].likes}</span>
+            `
+      const imgButtonCamera = document.querySelector(`.camera`);
+      imgButtonCamera.innerHTML = `
+            <img class="imgCamera" src="./assets/camera.png" alt="pinterest">
+            <span class="likesHeart">+53</span>
+            `
+
+    }
+    else {
+      divMainContainer2.innerHTML +=
+        `<div class="cardDiv">
           <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); height: ${heightImg}px; width: ${windowWidth}px">
             <img class="imgImageDiv${i}" />
             <div class="initialIconsBox">
@@ -151,8 +234,31 @@ export function createCards(imagesList) {
             <p class="cardPDate${i} date"> </p>
           </div>
         </div>`
+        ;
+      const imgImageDiv = document.querySelector(`.imgImageDiv${i}`);
 
-    const imgImageDiv = document.querySelector(`.imgImageDiv${i}`);
+      const cardPUser = document.querySelector(`.cardPUser${i}`)
+      const cardPDate = document.querySelector(`.cardPDate${i}`)
+
+      cardPUser.innerText = imagesList[i].user.name;
+      let dateCreated = imagesList[i].created_at;
+      let day = dateCreated.substring(8, 10);
+      let month = dateCreated.substring(5, 7);
+      let year = dateCreated.substring(0, 4);
+      cardPDate.innerText = `${day}/${month}/${year}`;
+
+      const imgButtonHeart = document.querySelector(`.heart`);
+      imgButtonHeart.innerHTML = `
+      <img class="imgHeart" src="./assets/heart.png" alt="pinterest">
+      <span class="likesHeart">${imagesList[i].likes}</span>
+      `
+      const imgButtonCamera = document.querySelector(`.camera`);
+      imgButtonCamera.innerHTML = `
+      <img class="imgCamera" src="./assets/camera.png" alt="pinterest">
+      <span class="likesHeart">+53</span>
+      `
+    }
+    /* const imgImageDiv = document.querySelector(`.imgImageDiv${i}`);
 
     const cardPUser = document.querySelector(`.cardPUser${i}`)
     const cardPDate = document.querySelector(`.cardPDate${i}`)
@@ -174,6 +280,6 @@ export function createCards(imagesList) {
       <img class="imgCamera" src="./assets/camera.png" alt="pinterest">
       <span class="likesHeart">+53</span>
       `
-
+ */
   }
 }

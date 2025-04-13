@@ -15,7 +15,7 @@
 // Descargar más de 10 fotos
 //? crear las columnas calculadas
 //? repartir las cartas entre las columnas
-//? hacer la impresión de las cartas por columnas definidas
+// hacer la impresión de las cartas por columnas definidas
 // Poner a chica un nombre y a chico otro
 
 
