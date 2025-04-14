@@ -29,7 +29,7 @@ export { numberOfColumns, imagesListPerson };
 let numberOfColumns = 2;
 /* = Math.ceil(window.innerWidth / 300); */
 
-if (window.innerWidth < 400) {
+if (window.innerWidth < 600) {
   numberOfColumns = 2;
 } else {
   numberOfColumns = 5;

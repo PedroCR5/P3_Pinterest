@@ -1,8 +1,8 @@
 import { windowWidth, numberOfColumns } from "../../../main";
 //console.log(numberOfColumns);
 
-let numberOfColumnsHere = 2;
-console.log(numberOfColumnsHere);
+/* let numberOfColumnsHere = 2;
+console.log(numberOfColumnsHere); */
 
 export function createColumns() {
   console.log(numberOfColumns);
