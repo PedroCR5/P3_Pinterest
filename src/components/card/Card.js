@@ -97,10 +97,27 @@ export function createCards(imagesList) {
   
     } */
   //!Prueba columnas
-  const divMainContainer1 = document.querySelector("#div1");
-  const divMainContainer2 = document.querySelector("#div2");
-  divMainContainer1.innerHTML = ``;
-  divMainContainer2.innerHTML = ``;
+
+  let numberColumns
+  let factorColumns
+  if (numberColumns === 2) {
+    const divMainContainer1 = document.querySelector("#div1");
+    const divMainContainer2 = document.querySelector("#div2");
+    divMainContainer1.innerHTML = ``;
+    divMainContainer2.innerHTML = ``;
+  } else {
+    const divMainContainer1 = document.querySelector("#div1");
+    const divMainContainer2 = document.querySelector("#div2");
+    const divMainContainer3 = document.querySelector("#div3");
+    const divMainContainer4 = document.querySelector("#div4");
+    const divMainContainer5 = document.querySelector("#div5");
+    divMainContainer1.innerHTML = ``;
+    divMainContainer2.innerHTML = ``;
+    divMainContainer3.innerHTML = ``;
+    divMainContainer4.innerHTML = ``;
+    divMainContainer5.innerHTML = ``;
+  }
+
 
   //Meter personas
 

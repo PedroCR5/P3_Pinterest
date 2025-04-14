@@ -6,6 +6,7 @@
 //!Web FULL RESPONSIVE
 //? Hacer header para Desktop
 //? Responsive movil 393, desktop 1440.
+//? Circulo persona mayor en el primero.
 //Si no se encuentran imágenes con la frase introducida, se realizará otra petición con la palabra gatos y la sugerencia de utilizar otra frase o palabra para una búsqueda correcta
 // cuando pones busqueda fallida, que deje la última o dogs y de un aviso y no quede pillado
 // me queda pillado con búsqueda fallida
@@ -25,8 +26,19 @@ import { createCards } from './src/components/card/card';
 import { createColumns } from './src/components/cardContainers/cardContainer';
 export let windowWidth = (window.innerWidth / 2.3);
 export { numberOfColumns, imagesListPerson };
-let numberOfColumns = Math.ceil(window.innerWidth / 300);
-//console.log(numberOfColumns);
+let numberOfColumns = 2;
+/* = Math.ceil(window.innerWidth / 300); */
+
+if (window.innerWidth < 400) {
+  numberOfColumns = 2;
+} else {
+  numberOfColumns = 5;
+}
+//console.log(windowWidth);
+console.log(window.innerWidth);
+
+
+console.log(numberOfColumns);
 
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
