@@ -88,3 +88,22 @@
   display: flex;
   flex-direction: column;
 }
+.desktopHeader {
+  display: flex;
+}
+.desktopButton {
+  color: black;
+  background-color: black;
+  padding-left: 30%;
+  padding-right: 30%;
+  width: 100%;
+  border-radius: 22%;
+  overflow-x: visible;
+  font-weight: bold;
+  /*  border-top-left-radius: 20%;
+  border-end-start-radius: 30%;
+  border-end-end-radius: 30%;
+  border-start-start-radius: 30%;
+  border-start-end-radius: 30%; */
+  border-radius: 47%;
+}
