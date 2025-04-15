@@ -192,3 +192,15 @@
   border-width: 10px;
   margin-top: -40%;
 }
+
+#miImagenCanvas0 {
+  grid-area: person;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: solid;
+  border-radius: 50%;
+  max-width: 40%;
+  /*   border-color: aquamarine; */
+  border-width: 15px;
+  margin-top: -40%;
+}

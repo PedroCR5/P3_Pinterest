@@ -5,41 +5,25 @@
 
 //!Web FULL RESPONSIVE
 //? Hacer header para Desktop
-//? Responsive movil 393, desktop 1440.
-//? Circulo persona mayor en el primero.
-//Si no se encuentran imágenes con la frase introducida, se realizará otra petición con la palabra gatos y la sugerencia de utilizar otra frase o palabra para una búsqueda correcta
-// cuando pones busqueda fallida, que deje la última o dogs y de un aviso y no quede pillado
-// me queda pillado con búsqueda fallida
-
-//!Se recogen correctamente los datos correspondientes para conseguir un diseño como el aportado
-//? Columnas Desktop 5
-// Descargar más de 10 fotos
-//? crear las columnas calculadas
-//? repartir las cartas entre las columnas
-// hacer la impresión de las cartas por columnas definidas
-// Poner a chica un nombre y a chico otro
+//?hacer 3 botones y 2 iconos button desktop
+// Circulo persona mayor en el primero.
+// quitar CardsContainer1
+//? limpiar js
+//? limpiar css
 
 
 import './style.css';
 import { createButton } from './src/components/button/button';
-import { createCards } from './src/components/card/card';
+import { createCards } from './src/components/card/Card';
 import { createColumns } from './src/components/cardContainers/cardContainer';
 export let windowWidth = (window.innerWidth / 2.3);
 export { numberOfColumns, imagesListPerson };
 let numberOfColumns = 2;
-/* = Math.ceil(window.innerWidth / 300); */
-
-if (window.innerWidth < 600) {
+if (window.innerWidth < 500) {
   numberOfColumns = 2;
 } else {
   numberOfColumns = 5;
 }
-//console.log(windowWidth);
-console.log(window.innerWidth);
-
-
-console.log(numberOfColumns);
-
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -55,14 +39,11 @@ divApp.innerHTML =
 <div class="myDiv">
     </div>
 <main> 
-<div class="mainContainerCards">
-</div>
 <div class="mainContainerCards2">
 </div> </main>`;
 createColumns()
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 const endPoint = 'https://api.unsplash.com/search/photos';
-//Información de Unsplash. Pintada en HTML.
 let imagesList = {}
 async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
@@ -81,7 +62,6 @@ async function getImages(query) {
   }
 }
 getImages('dog');
-//Introducción de palabra a buscar
 let firstWord = 'nada de nada';
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {

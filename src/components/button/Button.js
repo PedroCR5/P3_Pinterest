@@ -1,5 +1,4 @@
 import "./Button.css";
-
 export const createButton = ({
   texto = "Pon aquí tu texto",
   size = "m",

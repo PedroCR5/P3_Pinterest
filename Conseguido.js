@@ -196,3 +196,19 @@ export function pixelImg(imgUsadaCard, iCard) {
 
 //!El proyecto cumple con los requisitos mínimos del Proyecto 1 en cuanto al HTML y CSS
 // hacer variables margenes ...
+
+
+//Si no se encuentran imágenes con la frase introducida, se realizará otra petición con la palabra gatos y la sugerencia de utilizar otra frase o palabra para una búsqueda correcta
+// cuando pones busqueda fallida, que deje la última o dogs y de un aviso y no quede pillado
+// me queda pillado con búsqueda fallida
+
+//!Se recogen correctamente los datos correspondientes para conseguir un diseño como el aportado
+// Columnas Desktop 5
+// Descargar más de 10 fotos
+// crear las columnas calculadas
+// repartir las cartas entre las columnas
+// hacer la impresión de las cartas por columnas definidas
+// Poner a chica un nombre y a chico otro
+
+
+// Responsive movil 393, desktop 1440.
