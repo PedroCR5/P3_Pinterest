@@ -93,7 +93,7 @@
 }
 .desktopButton {
   color: black;
-  background-color: black;
+
   padding-left: 30%;
   padding-right: 30%;
   width: 100%;
@@ -106,4 +106,40 @@
   border-start-start-radius: 30%;
   border-start-end-radius: 30%; */
   border-radius: 47%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}
+.desktopHeader {
+  display: none;
+}
+.initial {
+  color: var(--rtc-bgColor);
+}
+.desktopIconCampana {
+  background-image: url('/assets/campana.png');
+}
+
+@media (min-width: 500px) {
+  .desktopHeader {
+    display: flex;
+    justify-content: center;
+  }
+  .headerSearchContainer {
+    display: flex;
+    background-color: var(--rtc-bgColor2);
+    padding: 1%;
+    border-radius: 20px;
+    width: 50%;
+    margin: 10px;
+  }
+  .inputInfo {
+    background-color: var(--rtc-bgColor2);
+    border: none;
+    width: 80%;
+    padding: 5px;
+    /*     box-sizing: border-box;
+ */
+  }
 }

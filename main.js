@@ -5,7 +5,9 @@
 
 //!Web FULL RESPONSIVE
 //? Hacer header para Desktop
-//? hacer 3 botones y 2 iconos button desktop
+//? Organizar mejor los 3 button de desktop
+// hacer 3 botones 
+// hacer 2 iconos button desktop
 // Circulo persona mayor en el primero.
 // quitar CardsContainer1
 //? limpiar js
@@ -29,15 +31,20 @@ divApp.innerHTML =
   `<header>
   <div class="headerContainer">
     <img class="iconePinterest" src="./assets/pinterest_logo.png" alt="pinterest">
-    <div class="headerSearchContainer">
-      <span class="icon">🔍</span>
-      <div class="desktopHeader">
-        ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton` })};
-        ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton` })};
+    <div class="desktopHeader">
+        ${createButton({ texto: "Inicio", size: "s", classInfo: `desktopButton initial` })}
+        ${createButton({ texto: "Explorar", size: "s", classInfo: `desktopButton` })}
         ${createButton({ texto: "Crear", size: "s", classInfo: `desktopButton` })}
       </div>
+    <div class="headerSearchContainer">
+      <span class="icon">🔍</span>
+      
       <input class="inputInfo" id="word" type="text" placeholder=" Buscar...">
     </div>
+        <img class="desktopIconCampana iconePinterest" src="./assets/campana.png" alt="campana">
+        <img class="desktopIconComments iconePinterest" src="./assets/comentarios.png" alt="comentarios">
+
+ 
     ${createButton({ texto: "D", size: "s", classInfo: "upRightButton" })}
   </div>
 </header> 
