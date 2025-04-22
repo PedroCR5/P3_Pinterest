@@ -4,12 +4,7 @@
 //!EL REPOSITORIO DE GITHUB DEBE ESTAR PÚBLICO PARA PODER REALIZAR LA CORRECCIÓN.
 
 //!Web FULL RESPONSIVE
-//? Hacer header para Desktop
-//? Organizar mejor los 3 button de desktop
-// hacer 3 botones 
-// hacer 2 iconos button desktop
-// Circulo persona mayor en el primero.
-// quitar CardsContainer1
+//? hacer los botones del header mejor, como pinterest
 //? limpiar js
 //? limpiar css
 

@@ -212,3 +212,10 @@ export function pixelImg(imgUsadaCard, iCard) {
 
 
 // Responsive movil 393, desktop 1440.
+
+// Hacer header para Desktop
+// Organizar mejor los 3 button de desktop
+// hacer 3 botones 
+// hacer 2 iconos button desktop
+// Circulo persona mayor en el primero.
+// quitar CardsContainer1
