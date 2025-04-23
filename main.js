@@ -9,7 +9,6 @@
 //? limpiar css
 // Poner 3 columnas para tablet
 
-
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
@@ -37,21 +36,17 @@ divApp.innerHTML =
       </div>
     <div class="headerSearchContainer">
       <span class="icon">🔍</span>
-      
       <input class="inputInfo" id="word" type="text" placeholder=" Buscar...">
     </div>
         <img class="desktopIconCampana iconePinterest" src="./assets/campana.png" alt="campana">
         <img class="desktopIconComments iconePinterest" src="./assets/comentarios.png" alt="comentarios">
-
- 
     ${createButton({ texto: "D", size: "s", classInfo: "upRightButton" })}
   </div>
 </header> 
-<div class="myDiv">
-    </div>
+<div class="myDiv"></div>
 <main> 
-<div class="mainContainerCards2">
-</div> </main>`;
+<div class="mainContainerCards2"></div> 
+</main>`;
 createColumns()
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 const endPoint = 'https://api.unsplash.com/search/photos';
@@ -78,13 +73,11 @@ document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
     console.log(firstWord);
-
     if (firstWord === 'nada de nada') {
       firstWord = event.target.value;
       console.log(firstWord);
     }
     console.log(firstWord);
-
     getImages(`${valorInput}`);
     event.target.value = '';
   }
@@ -96,7 +89,6 @@ document.querySelector(`.iconePinterest`).onclick = function () {
   else {
     getImages(firstWord)
   };
-
 };
 let imagesListP = []
 const imagesListPerson = []
@@ -109,12 +101,8 @@ async function getImagesPerson(queryPerson) {
     for (let k = 0; k < 4; k++) {
       const element = document.getElementById(`miImagenCanvas${k}`);
       element.src = imagesListPersonA[0].urls.small;
-      //console.log(imagesListPersonA);
-
       const elementName = document.querySelector(`.cardPUser${k}`);
       elementName.innerText = imagesListPersonA[8].user.first_name + " " + imagesListPersonA[0].user.last_name;
-      // console.log(imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name);
-
     }
   } else {
     for (let k = 4; k < 10; k++) {
@@ -122,10 +110,6 @@ async function getImagesPerson(queryPerson) {
       element.src = imagesListPersonA[0].urls.small;
       const elementName = document.querySelector(`.cardPUser${k}`);
       elementName.innerText = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
-      //const elementName = document.getElementById(`cardPUser${k}`);
-      /*   let example = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
-        elementName.innerText = '${example}';
-        console.log(imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name); */
     }
   }
   return imagesListPersonA

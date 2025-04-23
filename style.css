@@ -125,6 +125,15 @@
   .desktopHeader {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .buttonInfo1.s {
+    width: 40px;
+    height: 29px;
+    border-radius: 5% 30%;
+    /* background-position: center; */
+    /* background-size: cover; */
   }
   .headerSearchContainer {
     display: flex;
