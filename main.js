@@ -7,6 +7,7 @@
 //? hacer los botones del header mejor, como pinterest
 //? limpiar js
 //? limpiar css
+// Poner 3 columnas para tablet
 
 
 import './style.css';
@@ -18,8 +19,11 @@ export { numberOfColumns, imagesListPerson };
 let numberOfColumns = 2;
 if (window.innerWidth < 500) {
   numberOfColumns = 2;
-} else {
+} else if (window.innerWidth > 1300) {
   numberOfColumns = 5;
+}
+else {
+  numberOfColumns = 3;
 }
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
