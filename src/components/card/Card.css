@@ -39,11 +39,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* max-width: 100%; */
   height: auto;
-  /* max-height: max-content; */
-
-  /* background-image: url(https://images.unsplash.com/photo-1422565096762-bdb997a56a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2OTA3Nzl8MHwxfHNlYXJjaHwyfHxkb2d8ZW58MHx8fHwxNzM1ODUzMjk4fDA&ixlib=rb-4.0.3&q=80&w=200); */
   margin: 5px;
   display: flex;
   justify-content: center;
@@ -91,11 +87,6 @@
   display: flex;
   margin-left: 50%;
 }
-
-/* .cardBottomPart {
-  display: grid;
-  
-} */
 .center {
   display: flex;
   align-items: center;
@@ -157,11 +148,6 @@
   border-radius: 22%;
   overflow-x: visible;
   font-weight: bold;
-  /*  border-top-left-radius: 20%;
-  border-end-start-radius: 30%;
-  border-end-end-radius: 30%;
-  border-start-start-radius: 30%;
-  border-start-end-radius: 30%; */
   border-radius: 47%;
 }
 
@@ -188,7 +174,6 @@
   border: solid;
   border-radius: 50%;
   max-width: 30%;
-  /*   border-color: aquamarine; */
   border-width: 10px;
   margin-top: -40%;
 }
@@ -200,7 +185,6 @@
   border: solid;
   border-radius: 50%;
   max-width: 40%;
-  /*   border-color: aquamarine; */
   border-width: 15px;
   margin-top: -40%;
 }

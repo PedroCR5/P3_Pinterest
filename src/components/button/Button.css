@@ -15,10 +15,6 @@
 
   width: 40px;
   height: 40px;
-  /* border: 'none';
-  cursor: 'pointer'; */
-  /* background-position: center; */
-  /* background-size: cover; */
 }
 
 .buttonInfo1.m {
@@ -33,8 +29,6 @@
 
 .logo {
   background-image: url(/assets/pinterest_logo.png);
-  /*   background-size: 100%;
- */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

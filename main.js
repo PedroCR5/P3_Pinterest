@@ -1,14 +1,3 @@
-
-//!DISEÑO PROPUESTO: https://www.figma.com/design/gLRrcetLfS9KkG2o43qpfB/PROYECTO3?node-id=0-1&t=mq0pGZimhN0ytHEM-1
-//!Para la entrega bastará con que subas tu proyecto a github y nos facilites en enlace en el input que tienes a la derecha
-//!EL REPOSITORIO DE GITHUB DEBE ESTAR PÚBLICO PARA PODER REALIZAR LA CORRECCIÓN.
-
-//!Web FULL RESPONSIVE
-//? hacer los botones del header mejor, como pinterest
-//? limpiar js
-//? limpiar css
-// Poner 3 columnas para tablet
-
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
